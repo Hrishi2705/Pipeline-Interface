@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="phase2.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css'>
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>CSV File Upload and Script Execution</title>
+   </head>
+   <body>
+      <div class="site-wrap">
+         <nav class="site-nav">
+            <div class="name">
+               Pipeline Interface
+            </div>
+            <ul>
+               <li class="active">
+                  <a href="#">PIPELINE</a>
+                  <ul>
+                     <li><a href="/phase1.html" class="transition-swipe">Phase 1</a></li>
+                     <li class="active"><a href="/phase2.html" class="transition-swipe">Phase 2</a></li>
+                     <li><a href="/phase3.html" class="transition-swipe">Phase 3</a></li>
+                  </ul>
+               </li>
+               <li><a href="collections.html">Collections</a></li>
+               <li><a href="#0">Documentation</a></li>
+               <li><a href="#0">Settings</a></li>
+            </ul>
+         </nav>
+         <main>
+            <header>
+               <h1 class="title">Pipeline</h1>
+               <nav class="nav-tabs" id="nav-tabs">
+                  <a href="/phase1.html" class="transition-swipe">
+                  PHASE 1
+                  </a>
+                  <a href="/phase2.html" class="active" class="transition-swipe">
+                  PHASE 2
+                  </a>
+                  <a href="/phase3.html">
+                  PHASE 3
+                  </a>
+               </nav>
+            </header>
+            <section>
+               <div id="main-content" >
+                  <input type="file" id="csvFileInput" class="custom-button" name="csvFiles" accept=".csv" multiple >
+                  <button id="checkAndUpload" disabled title="Provide input" disabled class="btn disabled">Check & Upload CSV</button>
+                  <button id="startButton" disabled title="Please upload file" disabled class="btn disabled">Start</button>
+                  <div class="container">
+                     <ul class="progressbar">
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                        <li class="step"></li>
+                     </ul>
+                  </div>
+                  <div class="stage-container">
+                     <div class="stage stage1">Stage 3</div>
+                     <div class="stage stage2">Stage 4</div>
+                     <div class="stage stage3">Stage 5</div>
+                  </div>
+                  <form action="/download" method="post" id="downloadForm">
+                     <div class="form-row">
+                        <div class="form-item">
+                           <p><b>Select a collection:</b></p>
+                              <label for="names">
+                              <input type="radio" name="collection" value="names" id="names">
+                              <span class="top-span">Names</span>
+                              </label>
+                              <label for="numbers">
+                              <input type="radio" name="collection" value="numbers" id="numbers">
+                              <span>Phone Numbers</span>
+                              </label>
+                        </div>
+                        <div class="form-item2">
+                           <label>
+                              <p><b>Choose format:</b></p>
+                           </label>
+                           <label for="csv">
+                           <input type="radio" name="format" value="csv" id="csv">
+                           <span>CSV</span>
+                           </label>
+                           <label for="json">
+                           <input type="radio" name="format" value="json" id="json">
+                           <span>JSON</span>
+                           </label>
+                        </div>
+                     </div>
+                     <button class="download-button" type="submit">
+                        <span class="button__text">Download</span>
+                        <span class="button__icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg">
+                              <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+                              <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.990,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+                              <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+                           </svg>
+                        </span>
+                     </button>
+                  </form>
+               </div>
+            </section>
+      </div>
+      </main>   
+      </div>
+      <script src="phase2.js"></script>
+   </body>
+</html>
