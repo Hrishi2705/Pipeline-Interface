@@ -8,7 +8,7 @@ const {
 } = require('mongodb');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 80;
 const {
     exec
 } = require('child_process');
