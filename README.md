@@ -10,7 +10,7 @@ This interface is a versatile Express.js application designed to streamline and 
 - **MongoDB Integration:** Select target MongoDB collections directly from the interface using a user-friendly checklist. Specify collection names and formats (CSV/JSON) effortlessly.
 
 ## Getting Started
-1. Clone the repository: `git clone https://github.com/your-username/ScriptRunner-Pro.git`
+1. Clone the repository
 2. Install dependencies: `npm install`
 3. Configure MongoDB connection in the `server.js` file.
 4. Run the file: `server.js`
