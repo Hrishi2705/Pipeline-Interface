@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const fs = require('fs/promises');
+const fs = require('fs.promises');
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 const {
