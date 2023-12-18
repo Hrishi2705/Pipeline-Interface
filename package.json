@@ -15,7 +15,6 @@
     "express-fileupload": "^1.4.1",
     "express-ws": "^5.0.2",
     "fast-csv": "^4.3.6",
-    "fs": "^0.0.1-security",
     "fs.promises": "^0.1.2",
     "mongoose": "^7.6.0",
     "p-queue": "^7.4.1",
