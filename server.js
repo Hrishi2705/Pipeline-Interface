@@ -127,35 +127,35 @@ import('p-queue').then(({ default: PQueue }) => {
     let client;
     // Connect to MongoDB and retrieve the selected collection
     try {
-      client = await MongoClient.connect('mongodb+srv://hrishikesh:qwertyuiop@cluster0.lz0edaw.mongodb.net/');
-      const db = client.db('data');
-      const collection = db.collection(selectedCollection);
-      const data = await collection.find().toArray();
-
-      // Generate the file content based on the selected format
-      let fileContent;
-      if (format === 'csv') {
-        // Convert the data to CSV format
-        fileContent = convertToCSV(data);
-        res.setHeader('Content-Disposition', `attachment; filename=${selectedCollection}.csv`);
-        res.setHeader('Content-Type', 'text/csv');
-      } else {
-        // Convert the data to JSON format
-        fileContent = JSON.stringify(data, null, 2);
-        res.setHeader('Content-Disposition', `attachment; filename=${selectedCollection}.json`);
-        res.setHeader('Content-Type', 'application/json');
-      }
-
-      // Send the file to the client
-      res.send(fileContent);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    } finally {
-      if (client && client.close) {
-        client.close(); // Close the MongoDB connection if it was established and has a close method
-      }
-    }
+        client = await MongoClient.connect('mongodb+srv://hrishikesh:qwertyuiop@cluster0.lz0edaw.mongodb.net/');
+        const db = client.db('data');
+        const collection = db.collection(selectedCollection);
+        const data = await collection.find().toArray();
+      
+        // Generate the file content based on the selected format
+        let fileContent;
+        if (format === 'csv') {
+          // Convert the data to CSV format
+          fileContent = convertToCSV(data);
+          res.setHeader('Content-Disposition', `attachment; filename=${selectedCollection}.csv`);
+          res.setHeader('Content-Type', 'text/csv');
+        } else {
+          // Convert the data to JSON format
+          fileContent = JSON.stringify(data, null, 2);
+          res.setHeader('Content-Disposition', `attachment; filename=${selectedCollection}.json`);
+          res.setHeader('Content-Type', 'application/json');
+        }
+      
+        // Send the file to the client
+        res.send(fileContent);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+      } finally {
+        if (client && client.close) {
+          client.close(); // Close the MongoDB connection if it was established and has a close method
+        }
+      }      
   });
 
   function convertToCSV(data) {
