@@ -12,7 +12,10 @@ const port = 3000;
 const {
     exec
 } = require('child_process');
+const dotenv = require('dotenv');
+dotenv.config();
 
+const URL = process.env.MONGO_URL;
 // Use dynamic import to load p-queue
 import('p-queue').then(({
     default: PQueue
@@ -138,7 +141,7 @@ import('p-queue').then(({
         let client;
         // Connect to MongoDB and retrieve the selected collection
         try {
-            client = await MongoClient.connect('mongodb+srv://hrishikesh:qwertyuiop@cluster0.lz0edaw.mongodb.net/');
+            client = await MongoClient.connect(URL);
             const db = client.db('data');
             const collection = db.collection(selectedCollection);
             const data = await collection.find().toArray();
