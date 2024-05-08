@@ -12,7 +12,6 @@ This interface is a versatile Express.js application designed to streamline and 
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
